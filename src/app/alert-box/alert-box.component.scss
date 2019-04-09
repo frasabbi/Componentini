@@ -1,0 +1,28 @@
+.container-fluid {
+  padding: 0px;
+  .alert {
+    padding: 15px;
+    .row {
+      &.success {//la & serve per dire che c'è una classe è allo stesso livello di quella sopra
+        outline: 1px solid lightgreen;
+        .icon{
+            background-color: lightgreen;
+        }
+    
+      }
+      &.warning{
+        outline: 1px solid red;
+        .icon{
+            background-color: red;
+        }
+      }
+      .icon {
+
+        text-align: center;
+        padding:10px 0px 10px 0px;
+
+        width: 40px;
+      }
+    }
+  }
+}

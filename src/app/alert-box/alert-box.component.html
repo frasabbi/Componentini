@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="alert">
+    <div class="row align-items-center" [ngClass]="{'success':type==='success', 'warning':type==='warning'}"><!--l'ngClass è una classe che verrà aggiunta se rispetta una determinata condizion-->
+      <div class="icon col-auto align-self-stretch row align-items-center no-gutters"><!--align-self-stretch serve per adattarsi allo spazio della riga -->
+        <div class="col" *ngIf="type==='success'">
+          &#10004;
+        </div>
+        <div class="col" *ngIf="type==='warning'">
+          X
+        </div>
+      </div>
+
+      <div class="text col" >
+       {{text}}
+      </div>
+      <div class="col-auto align-self-stretch" (click)="close()"> <!--    -->
+        X
+      </div>
+    </div>
+  </div>
+</div>
