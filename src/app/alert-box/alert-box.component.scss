@@ -10,11 +10,19 @@
         }
     
       }
-      &.warning{
+      &.error{
         outline: 1px solid red;
         .icon{
             background-color: red;
         }
+
+      }
+      &.info{
+        outline: 1px solid gray;
+        .icon{
+            background-color: gray;
+        }
+        
       }
       .icon {
 
@@ -22,6 +30,9 @@
         padding:10px 0px 10px 0px;
 
         width: 40px;
+        .text{
+          text-align: center
+        }
       }
     }
   }

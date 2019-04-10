@@ -1,11 +1,21 @@
-<app-alert-box
-[type]="'success'"
+<app-alert-box *ngIf="visibleSuccess===true"
+[types]="'success'"
 [text]="text1"
 (onClickClose)="onClose($event)"></app-alert-box>
-<app-alert-box
-[type]="'warning'" 
+<app-alert-box *ngIf="visibleError===true"
+[types]="'error'"
+
 [text]="text2"
 (onClickClose)="onClose($event)"></app-alert-box>
+<app-alert-box *ngIf="visibleInfo===true"
+[types]="'info'"
+
+[text]="text3"
+(onClickClose)="onClose($event)"></app-alert-box>
+
+<button (click)="onAlertToggle()">Alert visibility</button>
+
+
 <!-- il campo type è quello di alert-box.ts mentre quello dopo l'uguale si riferisce a una variabile contenuta nel ts di questo componente o un valore che gli passiamo noi;
      il text è la stessa cosa;
      l'onClickClose è l'evento che abbiamo dichiarato con il decoratore di Output all'interno di alert-box.component.ts e onClose è la funzione contenuta nel ts di app.component; -->
