@@ -25,9 +25,7 @@ export class AlertBoxComponent implements OnInit {
   }
   close(): void {
     this.alertService.setFalseByType(this.type);
-    this.onClickClose.emit({
-      type: this.type
-    });
+  
     console.log("alert closed");
   }
   checkVisibility(){
