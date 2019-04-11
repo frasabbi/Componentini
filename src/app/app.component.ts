@@ -26,32 +26,11 @@ export class AppComponent {
 
 
 
-  onClose(alertType): void {
-    console.log(alertType.type);
-    this.types = alertType.type;
-    for (var i = 0; i < this.types.length; i++) {
-      if(alertType.type==="success"){
-        this.visibleSuccess=false;
-      }
-      else if(alertType.type==="info"){
-        this.visibleInfo=false;
-      }
-      else if(alertType.type==="error"){
-        this.visibleError=false;
-      }
-      else{
-        this.visibleWarning = false;
-      }
-    }
-
-  }
-
-
   onAlertToggle(): void {
     this.visibleError = true;
     this.visibleSuccess = true;
     this.visibleInfo = true;
     this.visibleWarning = true;
-
+  
   }
 }

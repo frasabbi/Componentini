@@ -1,24 +1,24 @@
-<app-alert-box [types]="'success'" [show]="visibleSuccess" (onClickClose)="onClose($event)">Lorem
+<app-alert-box [type]="'success'">Lorem
     ipsum dolor, sit amet consectetur adipisicing elit. Vero corporis dolor hic sint reiciendis, repudiandae nostrum
     ipsa, doloribus in aliquid eveniet fuga voluptates perspiciatis numquam, doloremque animi? Cupiditate, eligendi
     minus.
 </app-alert-box>
-<app-alert-box [types]="'error'" [show]="visibleError" (onClickClose)="onClose($event)">
+<app-alert-box [type]="'error'"  >
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nulla perferendis eum atque soluta maxime ut
     doloribus exercitationem, vero beatae deleniti ducimus officiis suscipit minus.
 </app-alert-box>
-<app-alert-box [types]="'info'" [show]="visibleInfo" (onClickClose)="onClose($event)">
+<app-alert-box [type]="'info'"  >
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci quisquam voluptates quam esse natus commodi
     laudantium veritatis sit assumenda sunt repellendus ducimus omnis consectetur maiores enim, cumque fugiat
     consequuntur alias. Architecto vitae nam ad tempore iste ipsum in aperiam.
 </app-alert-box>
 
-<app-alert-box [types]="'warning'" [show]="visibleWarning" (onClickClose)="onClose($event)">
+<app-alert-box [type]="'warning'" >
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia ipsam provident dolorum voluptas hic suscipit
     eligendi quo voluptate molestiae. Dolores placeat quisquam inventore dicta deleniti non dignissimos perferendis
     similique consequuntur!
 </app-alert-box>
-<button (click)="onAlertToggle()">Alert visibility</button>
+<app-alert-action></app-alert-action>
 
 
 <!-- il campo type è quello di alert-box.ts mentre quello dopo l'uguale si riferisce a una variabile contenuta nel ts di questo componente o un valore che gli passiamo noi;

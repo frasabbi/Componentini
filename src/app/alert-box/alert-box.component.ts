@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Types } from '../types';
+import { AlertService } from "../services/alert-service.service";
+
 
 @Component({
   selector: 'app-alert-box',
@@ -8,23 +10,29 @@ import { Types } from '../types';
 
 })
 export class AlertBoxComponent implements OnInit {
-  @Input() types:Types;
-  @Input() show:boolean;
-  typeS=Types.SUCCESS;
-  typeE=Types.ERROR;
-  typeI=Types.INFO;
-  typeW=Types.WARNING
-  @Output() onClickClose:EventEmitter<any>=new EventEmitter<any>(); 
-  constructor() { }
+  @Input() type:Types;
+  typeS = Types.SUCCESS;
+  typeE = Types.ERROR;
+  typeI = Types.INFO;
+  typeW = Types.WARNING;
+  
+  @Output() onClickClose: EventEmitter<any> = new EventEmitter<any>();
+  constructor(public alertService: AlertService) { }
 
   ngOnInit() {
-
+    this.alertService.initVis(this.type);
+    
   }
-  close():void{
+  close(): void {
+    this.alertService.setFalseByType(this.type);
     this.onClickClose.emit({
-      type: this.types
+      type: this.type
     });
     console.log("alert closed");
+  }
+  checkVisibility(){
+    console.log("sto controllando la visibilità dell'ngIf");
+    return this.alertService.getVisByType(this.type);
   }
 
 }
