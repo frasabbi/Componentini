@@ -14,29 +14,33 @@ export class AppComponent {
   visibleError: boolean = true;
   visibleSuccess: boolean = true;
   visibleInfo: boolean = true;
+  visibleWarning: boolean = true;
+
   types = [
     Types.ERROR,
     Types.SUCCESS,
-    Types.INFO
+    Types.INFO,
+    Types.WARNING
   ]
   title = 'Componentini';
-  text1 = 'testo numero 1';
-  text2 = 'testo numero 2';
-  text3 = 'testo numero 3';
+
 
 
   onClose(alertType): void {
     console.log(alertType.type);
     this.types = alertType.type;
     for (var i = 0; i < this.types.length; i++) {
-      if(this.types[i]==="success"){
+      if(alertType.type==="success"){
         this.visibleSuccess=false;
       }
-      else if(this.types[i]==="info"){
+      else if(alertType.type==="info"){
         this.visibleInfo=false;
       }
-      else{
+      else if(alertType.type==="error"){
         this.visibleError=false;
+      }
+      else{
+        this.visibleWarning = false;
       }
     }
 
@@ -47,6 +51,7 @@ export class AppComponent {
     this.visibleError = true;
     this.visibleSuccess = true;
     this.visibleInfo = true;
+    this.visibleWarning = true;
 
   }
 }

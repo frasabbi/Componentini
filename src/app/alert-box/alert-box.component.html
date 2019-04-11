@@ -1,13 +1,13 @@
 <div class="container-fluid">
-  <div class="alert">
+  <div class="alert" *ngIf="show===true">
     <div class="row align-items-center"
-      [ngClass]="{'success':types==='success', 'error':types==='error' , 'info':types==='info'}">
+      [ngClass]="{'success':types==='success', 'error':types==='error' , 'info':types==='info','warning':types==='warning'}">
       <!--l'ngClass è una classe che verrà aggiunta se rispetta una determinata condizion-->
       <div class="icon col-auto align-self-stretch row align-items-center no-gutters">
         <!--align-self-stretch serve per adattarsi allo spazio della riga -->
         <div class="col" *ngIf="types===typeS">
           <svg width="20" height="24">
-            <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1" fill="lightgreen" />
+            <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1" fill="#7DBC00" />
             <text x="3" y="16" fill="white">&#10003;</text>
           </svg>
         </div>
@@ -23,13 +23,22 @@
             <text x="8" y="16" fill="white">i</text>
           </svg>
         </div>
+
+        <div class ="col" *ngIf="types===typeW" >
+          <svg width="20" height="24">
+            <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1" fill="#FA9600"/>
+            <text x="7.5" y="15" fill="white">!</text>
+          </svg>
+
+        </div>
+
       </div>
 
 
       <div class="text col">
-        {{text}}
+        <ng-content></ng-content>
       </div>
-      <div class="col-auto align-self-stretch" (click)="close()">
+      <div class="textx col-auto align-self-stretch" (click)="close()">
         <!--    -->
         X
       </div>

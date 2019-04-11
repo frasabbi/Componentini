@@ -4,9 +4,9 @@
     padding: 15px;
     .row {
       &.success {//la & serve per dire che c'è una classe è allo stesso livello di quella sopra
-        outline: 1px solid lightgreen;
+        outline: 1px solid #7DBC00;
         .icon{
-            background-color: lightgreen;
+            background-color: #7DBC00;
         }
     
       }
@@ -24,6 +24,12 @@
         }
         
       }
+      &.warning{
+        outline: 1px solid #FA9600;
+        .icon{
+            background-color: #FA9600;
+        }
+      }
       .icon {
 
         text-align: center;
@@ -35,5 +41,8 @@
         }
       }
     }
+  }
+  .textx{
+    font-size: 15px
   }
 }

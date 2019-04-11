@@ -8,11 +8,12 @@ import { Types } from '../types';
 
 })
 export class AlertBoxComponent implements OnInit {
-  @Input() text:string;
   @Input() types:Types;
+  @Input() show:boolean;
   typeS=Types.SUCCESS;
   typeE=Types.ERROR;
   typeI=Types.INFO;
+  typeW=Types.WARNING
   @Output() onClickClose:EventEmitter<any>=new EventEmitter<any>(); 
   constructor() { }
 
@@ -21,7 +22,6 @@ export class AlertBoxComponent implements OnInit {
   }
   close():void{
     this.onClickClose.emit({
-      text: this.text,
       type: this.types
     });
     console.log("alert closed");
